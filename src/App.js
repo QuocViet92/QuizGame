@@ -1,16 +1,22 @@
+import "./App.css"
+import React from "react"
+import Form from "./Component/Form"
+import Intro from "./Component/Intro"
 
-import './App.css';
-import React from 'react';
-// import Intro from './Component/Intro';
-import Quiz  from './Component/Quiz';
-
-function App() { 
-
-
-  
+function App() {
+  const [isActive, setIsActive] = React.useState(false)
+  function handleChangeActive() {
+    setIsActive((prev) => !prev)
+  }
   return (
-      <Quiz />
-  );
+    <div>
+      {isActive ? (
+        <Form isActive={isActive} onClick={handleChangeActive} />
+      ) : (
+        <Intro handleClick={handleChangeActive} />
+      )}
+    </div>
+  )
 }
 
-export default App;
+export default App
