@@ -26,7 +26,7 @@ export default function Form(props) {
               return {
                 id: nanoid(),
                 value: decode(answer),
-                isheld: false,
+                                  isheld: false,
               }
             })
             return {
